@@ -1,0 +1,17 @@
+{
+    "name": "janklod/training",
+    "description": "MVC pattern training project",
+    "authors": [
+        {
+            "name": "janklod84",
+            "email": "jeanyao34@yahoo.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Project\\" : "src/framework",
+            "app\\": "app"
+        }
+    },
+    "require": {}
+}

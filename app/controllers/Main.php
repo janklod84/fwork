@@ -1,7 +1,8 @@
 <?php
+namespace app\controllers;
 
 
-class Main
+class Main extends AppController
 {
     public function indexAction()
     {

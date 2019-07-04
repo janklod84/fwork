@@ -1,5 +1,5 @@
 <?php
-
+namespace Project\Routing;
 
 
 class Router
@@ -77,6 +77,7 @@ class Router
                     $route['action'] = 'index';
                 }
 
+                $route['controller'] = self::upperCamelCase($route['controller']);
                 self::$route = $route;
                 return true;
             }
@@ -93,17 +94,24 @@ class Router
      */
      public static function dispatch($url)
      {
+         // remove query string
+         $url = self::removeQueryString($url);
+
+         // process dispatching route
          if(self::match($url))
          {
-             $controller = self::upperCamelCase(self::$route['controller']);
+             $controller = sprintf('app\controllers\\%s', self::$route['controller']);
 
              if(class_exists($controller))
              {
-                $cObj = new $controller;
+                $cObj = new $controller(self::$route);
                 $action = self::lowerCamelCase(self::$route['action']).'Action';
                 if(method_exists($cObj, $action))
                 {
-                    call_user_func_array([$cObj, $action], []);
+                    // call controller and action
+                    call_user_func([$cObj, $action]);
+
+                    // get current view
 
                 }else{
 
@@ -155,5 +163,32 @@ class Router
      public static function lowerCamelCase($name)
      {
          return lcfirst(self::upperCamelCase($name));
+     }
+
+
+    /**
+     * Remove Query string
+     *
+     *  URL: http://work.loc/posts-new/test?page=2
+     * [ echo $url; show: posts-new/test&page=2 ]
+     *
+     *
+     * @param string $url
+     * @return string
+     */
+     protected static function removeQueryString($url)
+     {
+          //  echo $url;
+          if($url)
+          {
+              $params = explode('&', $url, 2); // debug($params);
+              if(strpos($params[0], '=') === false) // page/part1..
+              {
+                  return rtrim($params[0], '/');
+              }else{ // page = something
+                  return '';
+              }
+          }
+
      }
 }

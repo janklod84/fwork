@@ -1,36 +1,31 @@
 <?php
+//error_reporting(E_ALL);
+error_reporting(-1);
+
+
+use Project\Routing\Router;
+
 
 
 // Configuration
 define('WWW', __DIR__);
-define('CORE', dirname(__DIR__).'/vendor/core');
 define('ROOT', dirname(__DIR__));
-define('APP', dirname(__DIR__) .'/app');
+define('CORE', ROOT.'/vendor/project/core');
+define('APP', ROOT .'/app');
 
 
 // Load classes and libs
-require '../vendor/libs/functions.php';
-require '../vendor/core/Router.php';
-/*
-require '../app/controllers/Main.php';
-require '../app/controllers/Posts.php';
-require '../app/controllers/PostsNew.php';
-*/
+require '../src/framework/Functions.php';
+require_once '../vendor/autoload.php';
 
-spl_autoload_register(function ($classname) {
-    $file = sprintf(APP . '/controllers/%s.php', $classname);
-    if(file_exists($file))
-    {
-        require_once $file;
-    }
-});
+
 
 // Add routes
 require_once __DIR__.'/../app/routes.php';
 
 
 //echo '<h3>Routes</h3>';
-//debug(Router::routes());
+debug(Router::routes());
 
 
 // Request: Get URL [ Query String ]
