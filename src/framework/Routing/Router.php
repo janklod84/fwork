@@ -112,6 +112,7 @@ class Router
                     call_user_func([$cObj, $action]);
 
                     // get current view
+                    call_user_func([$cObj, 'getView']);
 
                 }else{
 

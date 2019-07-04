@@ -9,7 +9,7 @@ define('WWW', __DIR__);
 define('ROOT', dirname(__DIR__));
 define('CORE', ROOT.'/vendor/project/core');
 define('APP', ROOT .'/app');
-
+define('LAYOUT', 'default');
 
 
 // Bootstrap
