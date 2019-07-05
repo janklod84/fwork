@@ -4,12 +4,15 @@ error_reporting(-1);
 
 
 
+
 // Configuration
 define('WWW', __DIR__);
 define('ROOT', dirname(__DIR__));
-define('CORE', ROOT.'/vendor/project/core');
+define('CORE', ROOT.'/src');
+define('LIBS', CORE.'/libs');
 define('APP', ROOT .'/app');
 define('LAYOUT', 'default');
+
 
 
 // Bootstrap

@@ -17,10 +17,21 @@
 </head>
 <body>
      <div class="container">
+         <!-- show menu -->
+         <?php // debug($menu); ?>
+         <ul class="nav nav-pills">
+             <?php if($menu): foreach($menu as $item): ?>
+                 <li role="presentation">
+                     <a href="category/<?= $item['id'] ?>"><?= $item['title'] ?></a>
+                 </li>
+             <?php endforeach; endif; ?>
+         </ul>
+
+         <!-- show content -->
          <?= $content ?>
 
-         <?= debug(\Project\Database\DB::$countSql); ?>
-         <?= debug(\Project\Database\DB::$queries); ?>
+         <?php //debug(\Project\Database\DB::$countSql); ?>
+         <?php // debug(\Project\Database\DB::$queries); ?>
      </div>
 
     <!-- scripts -->

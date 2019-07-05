@@ -22,18 +22,19 @@ class MainController extends AppController
      */
     public function indexAction()
     {
-        # instance of model Post
-        $post = new Post();
 
         # get all posts
-        $posts = $post->findAll(); // debug($posts);
+        $posts = \R::findAll('posts');
+
+        # get menu
+        $menu = $this->menu;
 
 
         # define title
         $title = 'PAGE INDEX';
 
         # set data
-        $this->set(compact('title', 'posts'));
+        $this->set(compact('title', 'posts', 'menu'));
     }
 
 
