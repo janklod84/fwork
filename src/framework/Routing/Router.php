@@ -100,7 +100,7 @@ class Router
          // process dispatching route
          if(self::match($url))
          {
-             $controller = sprintf('app\controllers\\%s', self::$route['controller']);
+             $controller = sprintf('app\controllers\\%s', self::$route['controller']). 'Controller';
 
              if(class_exists($controller))
              {

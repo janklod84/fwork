@@ -2,7 +2,7 @@
 namespace app\controllers;
 
 
-class Page extends AppController
+class PageController extends AppController
 {
 
     # http://work.loc/page/view/contact

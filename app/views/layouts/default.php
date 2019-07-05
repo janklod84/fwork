@@ -19,6 +19,8 @@
      <div class="container">
          <?= $content ?>
 
+         <?= debug(\Project\Database\DB::$countSql); ?>
+         <?= debug(\Project\Database\DB::$queries); ?>
      </div>
 
     <!-- scripts -->
