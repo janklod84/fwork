@@ -1,12 +1,6 @@
-<button class="btn btn-default" id="send">Кнопка</button>
-<?php if(!empty($posts)): ?>
-  <?php foreach($posts as $post): ?>
-    <div class="panel panel-default">
-        <div class="panel-heading"><?= $post['title'] ?></div>
-        <div class="panel-body"><?= $post['text'] ?></div>
-    </div>
-  <?php endforeach; ?>
-<?php endif; ?>
+<h1>Welcome to Home page</h1>
+
+<button id="send" class="btn btn-default"></button>
 
 <!-- Add scripts only in this page -->
 <script src="/assets/js/test.js"></script>

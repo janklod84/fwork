@@ -8,10 +8,12 @@ class View
      * @var array $route
      * @var string $view
      * @var string $layout
+     * @var array  $scripts
      */
     private  $route = [];
     private  $view;
     private  $layout;
+    private  $scripts = [];
 
 
     /**
@@ -62,6 +64,7 @@ class View
          // verify if view file exist
          if(is_file($file_view))
          {
+             // include view file
              require($file_view);
 
          }else{
@@ -80,6 +83,18 @@ class View
              // verify if layout file exist
              if(is_file($file_layout))
              {
+                 $content = $this->getScript($content); # debug($this->scripts);
+                 $scripts = [];
+
+                 # if has scripts
+                 if(!empty($this->scripts[0]))
+                 {
+                     $scripts = $this->scripts[0];
+                 }
+
+                 // debug($scripts);
+
+                 // include layout
                  require($file_layout);
 
              }else{
@@ -87,7 +102,31 @@ class View
              }
          }
 
+    }
 
+    /**
+     * Get script from content
+     *
+     * [ .*? ] does mean may be something or not
+     *
+     * @param string $content
+     * @return string
+     */
+    protected function getScript($content)
+    {
 
+        # regex
+        $pattern = "#<script.*?>.*?</script>#si";
+
+       # if finded matches scripts , we'll add them to $this->>scripts
+       preg_match_all($pattern, $content, $this->scripts);
+
+       # if has scripts
+       if(!empty($this->scripts))
+       {
+            # we'll replacae pattenr by empty string in content
+            $content = preg_replace($pattern, '', $content);
+       }
+       return $content;
     }
 }

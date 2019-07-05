@@ -30,55 +30,42 @@ class MainController extends AppController
     public function indexAction()
     {
 
-        # get list
-        // App::$app->getList();
+            // R::fancyDebug(true);
 
-        R::fancyDebug(true);
-
-        # try to get data from cache
-        $posts = App::$app->cache->get('posts');
-
-        # if not data from cache
-        if(!$posts)
-        {
             # get all posts from database
             $posts = R::findAll('posts');
 
-            # add posts in cache
-            App::$app->cache->set('posts', $posts, 3600 * 24); // 1day
+            # get one record post
+            $post = R::findOne('posts', 'id = 1');
 
-        }
-
-
-        # add posts in cache
-         // App::$app->cache->set('posts', $posts); 1h
-        App::$app->cache->set('posts', $posts, 3600 * 24); // 1day
+            # get menu
+            $menu = $this->menu;
 
 
-        # get menu
-        $menu = $this->menu;
+            # set meta data
+            $this->setMeta('Главная страница', 'Описание страницы', 'Ключивые слова');
 
 
-        # set meta data
-        $this->setMeta('Главная страница', 'Описание страницы', 'Ключивые слова');
+            # get meta datas
+            $meta = $this->meta;
 
-        # set meta data from database / get one record post
-        $post = R::findOne('posts', 'id = 2');  // debug($post);
-        $this->setMeta($post->title, $post->description, $post->keywords);
-
-
-        # get meta datas
-        $meta = $this->meta;
-
-        # set data
-        $this->set(compact('posts', 'menu', 'meta'));
+            # set data
+            $this->set(compact('posts', 'menu', 'meta'));
     }
 
 
+    /**
+     * Action test
+     *
+     * @return void
+     */
     public function testAction()
     {
-        // page sans menu
-        # $this->layout = 'test';
+       if($this->isAjax())
+       {
+           die('111');
+       }
+       echo 222;
     }
 
 

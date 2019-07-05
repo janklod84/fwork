@@ -43,5 +43,14 @@
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <!--  Get scripts -->
+    <?php
+    // populates scripts [ variables $scripts definded inside view ]
+    foreach($scripts as $script) {
+        echo $script;
+    }
+    ?>
+
+
 </body>
 </html>
