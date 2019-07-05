@@ -2,6 +2,7 @@
 namespace app\controllers;
 
 use app\models\Post;
+use R;
 
 
 class MainController extends AppController
@@ -24,17 +25,33 @@ class MainController extends AppController
     {
 
         # get all posts
-        $posts = \R::findAll('posts');
+        $posts = R::findAll('posts');
+
 
         # get menu
         $menu = $this->menu;
 
 
-        # define title
-        $title = 'PAGE INDEX';
+        # set meta data
+        $this->setMeta('Главная страница', 'Описание страницы', 'Ключивые слова');
+
+        # set meta data from database / get one record post
+        $post = R::findOne('posts', 'id = 2');  // debug($post);
+        $this->setMeta($post->title, $post->description, $post->keywords);
+
+
+        # get meta datas
+        $meta = $this->meta;
 
         # set data
-        $this->set(compact('title', 'posts', 'menu'));
+        $this->set(compact('posts', 'menu', 'meta'));
+    }
+
+
+    public function testAction()
+    {
+        // page sans menu
+        # $this->layout = 'test';
     }
 
 

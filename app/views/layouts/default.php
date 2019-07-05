@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Template Default <?= isset($title) ? ' | '. $title : ''; ?></title>
+    <title><?= $meta['title'] ?></title>
+    <meta name='description' content="<?= $meta['desc'] ?>">
+    <meta name='keywords' content="<?= $meta['keywords'] ?>">
 
     <!-- styles -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -18,14 +20,18 @@
 <body>
      <div class="container">
          <!-- show menu -->
-         <?php // debug($menu); ?>
+         <?php if(!empty($menu)): // debug($menu); ?>
          <ul class="nav nav-pills">
-             <?php if($menu): foreach($menu as $item): ?>
+             <li role="presentation">
+                 <a href="page/about">About</a>
+             </li>
+             <?php foreach($menu as $item): ?>
                  <li role="presentation">
                      <a href="category/<?= $item['id'] ?>"><?= $item['title'] ?></a>
                  </li>
-             <?php endforeach; endif; ?>
+             <?php endforeach; ?>
          </ul>
+         <?php endif; ?>
 
          <!-- show content -->
          <?= $content ?>
