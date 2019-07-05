@@ -28,6 +28,23 @@ class MainController extends AppController
         # get all posts
         $posts = $post->findAll(); // debug($posts);
 
+
+        # define title
+        $title = 'PAGE INDEX';
+
+        # set data
+        $this->set(compact('title', 'posts'));
+    }
+
+
+    private function oldAction()
+    {
+        # instance of model Post
+        $post = new Post();
+
+        # get all posts
+        $posts = $post->findAll(); // debug($posts);
+
         # get one post
         $postOne = $post->findOne(2);  // debug($postOne);
 
