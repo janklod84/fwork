@@ -55,13 +55,14 @@ class DB
      *
      *
      * @param string $sql
+     * @param array  $params
      * @return bool
      */
-    public function execute($sql)
+    public function execute($sql, $params = [])
     {
         # execute query
         $stmt = $this->pdo->prepare($sql);
-        if($executed = $stmt->execute())
+        if($executed = $stmt->execute($params))
         {
             self::addQuery($sql);
             return $executed;
@@ -73,13 +74,14 @@ class DB
      * Execute Query and return results
      *
      * @param string $sql
+     * @param array  $params
      * @return array
      */
-    public function query($sql)
+    public function query($sql, $params = [])
     {
         # execute query
         $stmt = $this->pdo->prepare($sql);
-        $res  = $stmt->execute();
+        $res  = $stmt->execute($params);
         if($res !== false)
         {
             self::addQuery($sql);
