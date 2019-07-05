@@ -2,6 +2,7 @@
 namespace app\controllers;
 
 use app\models\Post;
+use Project\App;
 use R;
 
 
@@ -18,14 +19,40 @@ class MainController extends AppController
      * simple query for dumping table
      *   $res = $post->query('CREATE TABLE posts2 SELECT * FROM db_work.posts');
      *
-     *
+     * Ex :
+     * # verify if data in cache
+     * echo date('Y-m-d H:i', time());
+     * echo '<br>';
+     * $endtime = 1562322408;
+     * echo date('Y-m-d H:i', $endtime);
      * @return void
      */
     public function indexAction()
     {
 
-        # get all posts
-        $posts = R::findAll('posts');
+        # get list
+        // App::$app->getList();
+
+        R::fancyDebug(true);
+
+        # try to get data from cache
+        $posts = App::$app->cache->get('posts');
+
+        # if not data from cache
+        if(!$posts)
+        {
+            # get all posts from database
+            $posts = R::findAll('posts');
+
+            # add posts in cache
+            App::$app->cache->set('posts', $posts, 3600 * 24); // 1day
+
+        }
+
+
+        # add posts in cache
+         // App::$app->cache->set('posts', $posts); 1h
+        App::$app->cache->set('posts', $posts, 3600 * 24); // 1day
 
 
         # get menu

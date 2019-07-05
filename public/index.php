@@ -8,9 +8,10 @@ error_reporting(-1);
 // Configuration
 define('WWW', __DIR__);
 define('ROOT', dirname(__DIR__));
-define('CORE', ROOT.'/src');
-define('LIBS', CORE.'/libs');
 define('APP', ROOT .'/app');
+define('CORE', ROOT.'/src');
+define('CACHE', ROOT .'/temp/cache');
+define('LIBS', CORE.'/libs');
 define('LAYOUT', 'default');
 
 
@@ -18,6 +19,9 @@ define('LAYOUT', 'default');
 // Bootstrap
 require_once realpath(__DIR__.'/../app/bootstrap.php');
 
+
+
+new \Project\App();
 
 
 // Request: Get URL [ Query String ]
