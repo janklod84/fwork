@@ -3,6 +3,7 @@ namespace Project\Database;
 
 
 use PDO;
+use Project\Container\Singleton;
 use R;
 
 
@@ -10,14 +11,15 @@ use R;
 class DB
 {
 
+    use Singleton;
+
+
     /**
      * @var PDO $pdo
-     * @var object $instance
      * @var int $countSql  [ count of executed queries ]
      * @var array $queries
      */
     protected $pdo;
-    protected static $instance;
     public static $countSql = 0;
     public static $queries = [];
 
@@ -56,19 +58,5 @@ class DB
         // R::fancyDebug(true);
     }
 
-
-    /**
-     * Get instance of Database
-     *
-     * @return self
-     */
-    public static function instance()
-    {
-        if(self::$instance === null)
-        {
-            self::$instance = new self();
-        }
-        return self::$instance;
-    }
 
 }

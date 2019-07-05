@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use app\models\Post;
 use Project\App;
+use Project\Template\View;
 use R;
 
 
@@ -43,7 +44,7 @@ class MainController extends AppController
 
 
             # set meta data
-            $this->setMeta('Главная страница', 'Описание страницы', 'Ключивые слова');
+            View::setMeta('Главная страница', 'Описание страницы', 'Ключивые слова');
 
 
             # get meta datas
@@ -61,9 +62,14 @@ class MainController extends AppController
      */
     public function testAction()
     {
+        // if request is ajax
        if($this->isAjax())
        {
-           die('111');
+           $post = R::findOne('posts', "id = {$_POST['id']}");
+           // debug($post);
+
+           $this->loadView('_test', compact('post'));
+           die;
        }
        echo 222;
     }

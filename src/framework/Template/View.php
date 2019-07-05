@@ -9,11 +9,17 @@ class View
      * @var string $view
      * @var string $layout
      * @var array  $scripts
+     * @var array  $meta
      */
     private  $route = [];
     private  $view;
     private  $layout;
     private  $scripts = [];
+    private static $meta = [
+        'title'    => '',
+        'desc'     => '',
+        'keywords' => ''
+    ];
 
 
     /**
@@ -128,5 +134,36 @@ class View
             $content = preg_replace($pattern, '', $content);
        }
        return $content;
+    }
+
+
+    /*
+     * Get meta data
+     *
+     * @return string
+     */
+    public static function getMeta()
+    {
+        $html  = '<title>'. self::$meta['title'] . '</title>'. PHP_EOL;
+        $html .= '<meta name="description" content="'. self::$meta['desc'] .'">'. PHP_EOL;
+        $html .= '<meta name="keywords" content="'. self::$meta['keywords'] .'">'. PHP_EOL;
+        return $html;
+    }
+
+
+    /**
+     * Set meta datas
+     *
+     *
+     * @param string $title
+     * @param string $desc
+     * @param string $keywords
+     * @return void
+     */
+    public static function setMeta($title='', $desc='', $keywords='')
+    {
+       self::$meta['title'] = $title;
+       self::$meta['desc']  = $desc;
+       self::$meta['keywords'] = $keywords;
     }
 }

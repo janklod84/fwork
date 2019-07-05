@@ -5,10 +5,20 @@ namespace Project\Container;
 // Class Register [ Registry ]
 class Registry
 {
+
+    use Singleton;
+
+    /**
+     * @var array $objects
+     */
     public static $objects = [];
-    protected static $instance;
 
 
+    /**
+     * Registry constructor.
+     *
+     * @retrun void
+     */
     protected function __construct()
     {
         $config = require_once (ROOT.'/config/app.php');
@@ -21,20 +31,12 @@ class Registry
 
 
     /**
-     * Get instance of Database
+     * Get item from container
      *
-     * @return self
+     *
+     * @param $name
+     * @return mixed
      */
-    public static function instance()
-    {
-        if(self::$instance === null)
-        {
-            self::$instance = new self();
-        }
-        return self::$instance;
-    }
-
-
     public function __get($name)
     {
         // echo $name;
@@ -45,6 +47,13 @@ class Registry
     }
 
 
+    /**
+     * Set item
+     *
+     *
+     * @param strin $name
+     * @param string $classname
+     */
     public function __set($name, $classname)
     {
         if(!isset(self::$objects[$name]))
@@ -54,7 +63,11 @@ class Registry
     }
 
 
-
+    /**
+     * Get List
+     *
+     * @return void
+     */
     public function getList()
     {
         echo '<pre>';
