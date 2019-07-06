@@ -3,10 +3,28 @@
 <button class="btn btn-default" id="send">Кнопка</button>
 <!-- end show answer from json -->
 
+<!-- widgets select -->
+<?php new \Project\Widgets\Menu\Menu([
+        // 'tpl' => WWW.'/menu/my_menu.php', 'class' => 'my-menu',
+        'tpl' => WWW.'/select/select.php',
+        'container' => 'select',
+        'class' => 'my-select',
+        'table' => 'categories',
+        'cache' => 60, // 60s
+        'cacheKey' => 'menu_select'
+]); ?>
+<br>
+<!-- end widgets select -->
+
+
 <!-- widgets menu -->
-<?php new \Project\Widgets\Menu([
-
-
+<?php new \Project\Widgets\Menu\Menu([
+    'tpl' => WWW.'/menu/my_menu.php',
+    'container' => 'ul',
+    'class' => 'my-menu',
+    'table' => 'categories',
+    'cache' => 60, // 60s
+    'cacheKey' => 'menu_ul'
 ]); ?>
 <br>
 <!-- end widgets menu -->

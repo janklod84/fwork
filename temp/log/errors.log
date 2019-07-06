@@ -56,3 +56,71 @@
 ==========================
 [2019-07-06 15:18:28] Error Message: Illegal string offset 'childs' | File: D:\OSPanel\domains\work.loc\src\framework\Widgets\Menu.php, | Line: 73
 ==========================
+[2019-07-06 16:10:31] Error Message: Class 'Project\Widgets\Menu\Menu' not found | File: D:\OSPanel\domains\work.loc\app\views\Main\index.php, | Line: 7
+==========================
+[2019-07-06 16:10:55] Error Message: Class 'Project\Widgets\Menu\Menu' not found | File: D:\OSPanel\domains\work.loc\app\views\Main\index.php, | Line: 7
+==========================
+[2019-07-06 16:10:57] Error Message: Class 'Project\Widgets\Menu\Menu' not found | File: D:\OSPanel\domains\work.loc\app\views\Main\index.php, | Line: 7
+==========================
+[2019-07-06 16:54:19] Error Message: str_replace() expects at least 3 parameters, 2 given | File: D:\OSPanel\domains\work.loc\src\framework\Widgets\Menu\Menu.php, | Line: 74
+==========================
+[2019-07-06 17:01:15] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 17:01:29] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 17:11:08] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 17:40:14] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 17:52:50] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 17:53:28] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:12:39] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:16:07] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:18:03] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:18:23] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:18:56] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:28:47] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:30:06] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:30:19] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:31:11] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:31:51] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:32:06] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:39:04] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:48:11] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:48:15] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:48:58] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:51:31] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:57:10] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:57:34] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:57:39] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:57:41] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:57:43] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:57:44] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 18:57:46] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 19:08:45] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
