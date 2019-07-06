@@ -30,7 +30,6 @@ class MainController extends AppController
      */
     public function indexAction()
     {
-
             // R::fancyDebug(true);
 
             # get all posts from database
@@ -47,11 +46,8 @@ class MainController extends AppController
             View::setMeta('Главная страница', 'Описание страницы', 'Ключивые слова');
 
 
-            # get meta datas
-            $meta = $this->meta;
-
             # set data
-            $this->set(compact('posts', 'menu', 'meta'));
+            $this->set(compact('posts', 'menu'));
     }
 
 
@@ -65,9 +61,17 @@ class MainController extends AppController
         // if request is ajax
        if($this->isAjax())
        {
-           $post = R::findOne('posts', "id = {$_POST['id']}");
+           # DEBUG DATA
+           // $post = R::findOne('posts', "id = {$_POST['id']}");
            // debug($post);
 
+
+           # Exemple JSON ENCODE FAKE DATA
+           // $data = ['message' => 'Response from server', 'code' => 200];
+           // echo json_encode($data);
+
+           # Exemple WITH NO JSON
+           $post = R::findOne('posts', "id = {$_POST['id']}");
            $this->loadView('_test', compact('post'));
            die;
        }

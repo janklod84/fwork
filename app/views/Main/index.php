@@ -1,3 +1,6 @@
+<!-- show answer from json -->
+<div id="answer"></div>
+<!-- end show answer from json -->
 <button class="btn btn-default" id="send">Кнопка</button>
 <?php if(!empty($posts)): ?>
   <?php foreach($posts as $post): ?>
@@ -18,7 +21,15 @@
                 type: 'post',
                 data: {'id': 2},
                 success: function (res) {
-                    console.log(res);
+
+                    $('#answer').html(res);
+
+                    // show answer from server to view
+                    // var data = JSON.parse(res);
+                    // $('#answer').html('<p>Message: '+ data.message +' | Code: '+ data.code +'</p>');
+
+                    // show answer in console
+                    // console.log(res);
                 },
                 error: function () {
                     alert('Error');

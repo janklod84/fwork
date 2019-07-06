@@ -2,6 +2,8 @@
 namespace Project\Routing;
 
 
+use Exception;
+
 class Router
 {
 
@@ -116,18 +118,23 @@ class Router
 
                 }else{
 
-                    die(sprintf('Method <b>%s::%s</b> does not exist!', $controller, $action));
+                    // die(sprintf('Method <b>%s::%s</b> does not exist!', $controller, $action));
+                    throw new Exception(sprintf('Method <b>%s::%s</b> does not exist!', $controller, $action), 404);
                 }
 
              }else{
-                 die(sprintf('Controller <b>%s</b> does not exist!', $controller));
+                 // die(sprintf('Controller <b>%s</b> does not exist!', $controller));
+                 throw new Exception(sprintf('Controller <b>%s</b> does not exist!', $controller), 404);
              }
 
          }else{
 
              // Response
+             /*
              http_response_code(404);
              include '404.html';
+             */
+             throw new Exception('Страница не найдена!', 404);
          }
      }
 

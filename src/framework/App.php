@@ -3,6 +3,7 @@ namespace Project;
 
 
 use Project\Container\Registry;
+use Project\Exception\ErrorHandler;
 
 
 /**
@@ -27,5 +28,6 @@ class App
     public function __construct()
     {
         self::$app = Registry::instance();
+        new ErrorHandler();
     }
 }

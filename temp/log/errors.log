@@ -1,0 +1,50 @@
+[2019-07-06 12:15:36] Error Message: syntax error, unexpected '$post' (T_VARIABLE) | File: D:\OSPanel\domains\work.loc\app\controllers\MainController.php, | Line: 40
+==========================
+[2019-07-06 12:28:36] Error Message: Controller <b>app\controllers\DddController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 12:29:05] Error Message: Controller <b>app\controllers\DddController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 12:30:19] Error Message: Controller <b>app\controllers\DddController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 12:30:32] Error Message: Controller <b>app\controllers\DddController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 12:34:49] Error Message: Controller <b>app\controllers\DddController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 12:36:55] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 12:38:21] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 12:38:23] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 12:50:01] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 12:50:48] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 12:52:29] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 12:52:59] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 12:53:35] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 13:11:28] Error Message: Controller <b>app\controllers\DddController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 13:18:06] Error Message: Controller <b>app\controllers\DddController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 13:19:01] Error Message: Controller <b>app\controllers\DdController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 13:19:16] Error Message: Controller <b>app\controllers\DdController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 13:19:25] Error Message: Controller <b>app\controllers\DdController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 13:20:08] Error Message: Controller <b>app\controllers\DdController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 13:20:08] Error Message: Controller <b>app\controllers\DdController</b> does not exist! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 127
+==========================
+[2019-07-06 13:20:14] Error Message: Undefined variable: test | File: D:\OSPanel\domains\work.loc\app\controllers\MainController.php, | Line: 33
+==========================
+[2019-07-06 13:20:32] Error Message: Undefined variable: test | File: D:\OSPanel\domains\work.loc\app\controllers\MainController.php, | Line: 33
+==========================
+[2019-07-06 13:22:17] Error Message: Call to undefined function app\controllers\test() | File: D:\OSPanel\domains\work.loc\app\controllers\MainController.php, | Line: 33
+==========================
+[2019-07-06 13:22:30] Error Message: Call to undefined function app\controllers\test() | File: D:\OSPanel\domains\work.loc\app\controllers\MainController.php, | Line: 33
+==========================

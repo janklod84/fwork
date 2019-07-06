@@ -1,11 +1,11 @@
 <?php
-//error_reporting(E_ALL);
-error_reporting(-1);
-
-
 
 
 // Configuration
+# Debogger status
+define('DEBUG', 1);
+
+# Paths
 define('WWW', __DIR__);
 define('ROOT', dirname(__DIR__));
 define('APP', ROOT .'/app');
