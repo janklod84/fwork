@@ -1,8 +1,9 @@
 <?php
 namespace app\controllers;
 
-use app\models\Post;
-use Project\App;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+use PHPMailer\PHPMailer\PHPMailer;
 use Project\Template\View;
 use R;
 
@@ -26,11 +27,37 @@ class MainController extends AppController
      * echo '<br>';
      * $endtime = 1562322408;
      * echo date('Y-m-d H:i', $endtime);
+     *
+     * Ex:
+     * # testing Monolog [ Library ]
+     * $log = new Logger('name');
+     * $log->pushHandler(new StreamHandler(ROOT.'/temp/your.log'), Logger::WARNING);
+     *
+     * # add records to the log
+     *   $log->warning('Foo');
+     *   $log->error('Bar');
+     *
      * @return void
      */
     public function indexAction()
     {
             // R::fancyDebug(true);
+
+            /*
+            # testing Monolog [ Library ]
+            $log = new Logger('name');
+            $log->pushHandler(new StreamHandler(ROOT.'/temp/monolog.log'), Logger::WARNING);
+
+            // add records to the log
+            $log->warning('Foo');
+            $log->error('Bar');
+
+
+            # testing PHPMailer
+            $mailer = new PHPMailer();
+            debug($mailer);
+            */
+
 
             # get all posts from database
             $posts = R::findAll('posts');

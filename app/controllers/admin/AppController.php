@@ -21,11 +21,13 @@ class AppController extends Controller
     {
         parent::__construct($route);
 
+        /*
         if(!isset($is_admin) || $is_admin !== 1)
         {
              // or do redirect to /admin/login
              die('Access Restricted!');
         }
+        */
     }
 
 }

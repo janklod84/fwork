@@ -17,19 +17,27 @@
 </head>
 <body>
      <div class="container">
-         <!-- show menu -->
-         <?php if(!empty($menu)): // debug($menu); ?>
          <ul class="nav nav-pills">
+             <li role="presentation">
+                 <a href="/">Home</a>
+             </li>
              <li role="presentation">
                  <a href="page/about">About</a>
              </li>
-             <?php foreach($menu as $item): ?>
-                 <li role="presentation">
-                     <a href="category/<?= $item['id'] ?>"><?= $item['title'] ?></a>
-                 </li>
-             <?php endforeach; ?>
+             <li role="presentation">
+                 <a href="/admin">Admin</a>
+             </li>
+             <li role="presentation">
+                 <a href="/user/signup">Sign Up</a>
+             </li>
+             <li role="presentation">
+                 <a href="/user/login">Login</a>
+             </li>
+             <li role="presentation">
+                 <a href="/user/logout">Logout</a>
+             </li>
+
          </ul>
-         <?php endif; ?>
 
          <!-- show content -->
          <?= $content ?>

@@ -3,6 +3,10 @@ namespace Project\Database;
 
 
 
+use Valitron\Validator;
+
+
+
 abstract class Model
 {
 
@@ -11,10 +15,17 @@ abstract class Model
      * @var PDO $pdo
      * @var string $table
      * @var string $pk
+     * @var array $attributes [ Fillable data]
+     * @var array $errors
+     * @var array $rules
      */
     protected $pdo;
     protected $table;
     protected $pk = 'id';
+    public $attributes = [];
+    public $errors = [];
+    public $rules  = [];
+
 
 
     /**
@@ -25,6 +36,57 @@ abstract class Model
     public function __construct()
     {
         $this->pdo = DB::instance();
+    }
+
+
+    /**
+     * Load data [ Array table ex : From anywhere $_POST  ]
+     * [ Assign attributes by key and value ]
+     *
+     *
+     * @param array $data
+     * @return
+     */
+    public function load($data)
+    {
+       foreach($this->attributes as $name => $value)
+       {
+           if(isset($data[$name]))
+           {
+               $this->attributes[$name] = $data[$name];
+           }
+       }
+    }
+
+
+    /**
+     * Validate data
+     *
+     * @link https://packagist.org/packages/vlucas/valitron
+     * @param array $data
+     */
+    public function validate($data)
+    {
+        $v = new Validator($data);
+        $v->rules($this->rules);
+
+        if($v->validate())
+        {
+            return true;
+        }
+        $this->errors = $v->errors();
+        return false;
+    }
+
+
+    /**
+     * Get Errors
+     *
+     * @return array
+     */
+    public function getErrors()
+    {
+        return $this->errors;
     }
 
 
