@@ -1,7 +1,17 @@
 <!-- show answer from json -->
 <div id="answer"></div>
-<!-- end show answer from json -->
 <button class="btn btn-default" id="send">Кнопка</button>
+<!-- end show answer from json -->
+
+<!-- widgets menu -->
+<?php new \Project\Widgets\Menu([
+
+
+]); ?>
+<br>
+<!-- end widgets menu -->
+
+<!-- rendering posts -->
 <?php if(!empty($posts)): ?>
   <?php foreach($posts as $post): ?>
     <div class="panel panel-default">
@@ -10,6 +20,7 @@
     </div>
   <?php endforeach; ?>
 <?php endif; ?>
+<!-- end rendering posts -->
 
 <!-- Add scripts only in this page -->
 <script src="/assets/js/test.js"></script>
@@ -38,3 +49,4 @@
         });
     });
 </script>
+<!-- end scripts -->

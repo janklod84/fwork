@@ -48,3 +48,11 @@
 ==========================
 [2019-07-06 13:22:30] Error Message: Call to undefined function app\controllers\test() | File: D:\OSPanel\domains\work.loc\app\controllers\MainController.php, | Line: 33
 ==========================
+[2019-07-06 14:09:57] Error Message: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_work.categories' doesn't exist | File: D:\OSPanel\domains\work.loc\src\libs\rb.php, | Line: 774
+==========================
+[2019-07-06 14:10:39] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 137
+==========================
+[2019-07-06 15:17:25] Error Message: Illegal string offset 'childs' | File: D:\OSPanel\domains\work.loc\src\framework\Widgets\Menu.php, | Line: 74
+==========================
+[2019-07-06 15:18:28] Error Message: Illegal string offset 'childs' | File: D:\OSPanel\domains\work.loc\src\framework\Widgets\Menu.php, | Line: 73
+==========================

@@ -34,7 +34,6 @@ class MainController extends AppController
 
             # get all posts from database
             $posts = R::findAll('posts');
-            
 
             # get one record post
             $post = R::findOne('posts', 'id = 1');
