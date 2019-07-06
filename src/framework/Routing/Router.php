@@ -18,6 +18,13 @@ class Router
     /**
      * Add routes
      *
+     * Ex TO implements
+     *  Router::add('admin/user/{id:int}, [
+     *    'controller' => 'User',
+     *    'action' => 'index',
+     *    'prefix' => 'admin'
+     * ]);
+     *
      * @param $pattern
      * @param $route
      */
@@ -79,6 +86,14 @@ class Router
                     $route['action'] = 'index';
                 }
 
+                // prefixed controllers
+                if(!isset($route['prefix']))
+                {
+                    $route['prefix'] = '';
+                }else{
+                    $route['prefix'] .= '\\';
+                }
+
                 $route['controller'] = self::upperCamelCase($route['controller']);
                 self::$route = $route;
                 return true;
@@ -102,7 +117,7 @@ class Router
          // process dispatching route
          if(self::match($url))
          {
-             $controller = sprintf('app\controllers\\%s', self::$route['controller']). 'Controller';
+             $controller = sprintf('app\controllers\\%s%s', self::$route['prefix'], self::$route['controller']). 'Controller';
 
              if(class_exists($controller))
              {

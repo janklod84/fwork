@@ -2,6 +2,10 @@
 namespace Project\Template;
 
 
+use Exception;
+
+
+
 class View
 {
     /**
@@ -59,10 +63,13 @@ class View
          extract($data);
 
          // get full path view
-         $file_view = sprintf(APP . '/views/%s/%s.php',
+         $file_view = sprintf(APP . '/views/%s%s/%s.php',
+              $this->route['prefix'],
               $this->route['controller'],
               $this->view
          );
+
+         $file_view = $this->normalisePath($file_view);
 
          // start Bufferisation
          ob_start();
@@ -74,7 +81,8 @@ class View
              require($file_view);
 
          }else{
-             echo sprintf('<p>Not Found view <b>%s</b></p>', $file_view);
+             // echo sprintf('<p>Not Found view <b>%s</b></p>', $file_view);
+              throw new Exception(sprintf('<p>Not Found view <b>%s</b></p>', $file_view), 404);
          }
 
          // storage content
@@ -85,6 +93,7 @@ class View
          {
              // get full path layout
              $file_layout = sprintf(APP . '/views/layouts/%s.php', $this->layout);
+             $file_layout = $this->normalisePath($file_layout);
 
              // verify if layout file exist
              if(is_file($file_layout))
@@ -104,10 +113,22 @@ class View
                  require($file_layout);
 
              }else{
-                 echo sprintf('<p>Not Found layout <b>%s</b></p>', $file_layout);
+                 // echo sprintf('<p>Not Found layout <b>%s</b></p>', $file_layout);
+                 throw new Exception(sprintf('<p>Not Found layout <b>%s</b></p>', $file_layout), 404);
              }
          }
 
+    }
+
+    /**
+     * Normalise Path
+     *
+     * @param $path
+     * @return mixed
+     */
+    protected function normalisePath($path)
+    {
+        return str_replace(['\\', '/'], DIRECTORY_SEPARATOR, $path);
     }
 
     /**

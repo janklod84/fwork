@@ -21,6 +21,19 @@ Router::add('page/(?P<alias>[a-z-]+)', [
 
 
 // Defaults Rules or Routes [ Later replace by method Route::add(pattern, route)->with('str', 'regexcode') ]
+# Ex: http://work.loc/admin
+Router::add('admin', [
+    'controller' => 'User',
+    'action' => 'index',
+    'prefix' => 'admin'
+]);
+
+
+# this rule help us to write all defaults route we want
+Router::add('admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?', ['prefix' => 'admin']);
+
+
+
 # Ex: http://work.loc/
 Router::add('', [
     'controller' => 'Main',

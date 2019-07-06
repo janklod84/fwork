@@ -39,7 +39,7 @@ class MainController extends AppController
             $post = R::findOne('posts', 'id = 1');
 
             # get menu
-            $menu = []; //$this->menu;
+            $menu = $this->menu;
 
 
             # set meta data

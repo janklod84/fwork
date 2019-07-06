@@ -27,7 +27,7 @@ class AppController extends Controller
         new BaseModel();
 
         // get menu
-        $this->menu = R::findAll('categories');
+        $this->menu = R::findAll('category');
     }
 
 
