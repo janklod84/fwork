@@ -17,6 +17,7 @@
 </head>
 <body>
      <div class="container">
+         <!-- show menu -->
          <ul class="nav nav-pills">
              <li role="presentation">
                  <a href="/">Home</a>
@@ -38,6 +39,22 @@
              </li>
 
          </ul>
+         <!-- end menu -->
+
+         <!-- show messages -->
+         <?php if(isset($_SESSION['error'])): ?>
+             <div class="alert alert-danger">
+                 <?= $_SESSION['error']; unset($_SESSION['error']); ?>
+             </div>
+         <?php endif; ?>
+         <?php if(isset($_SESSION['success'])): ?>
+             <div class="alert alert-success">
+                 <?= $_SESSION['success']; unset($_SESSION['success']); ?>
+             </div>
+         <?php endif; ?>
+         <!-- end show messages -->
+
+         <?php debug($_SESSION); ?>
 
          <!-- show content -->
          <?= $content ?>

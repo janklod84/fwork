@@ -3,8 +3,9 @@ namespace Project\Database;
 
 
 
+use Exception;
 use Valitron\Validator;
-
+use R;
 
 
 abstract class Model
@@ -35,7 +36,7 @@ abstract class Model
      */
     public function __construct()
     {
-        $this->pdo = DB::instance();
+         $this->pdo = DB::instance();
     }
 
 
@@ -62,11 +63,19 @@ abstract class Model
     /**
      * Validate data
      *
+     * Ex:
+     *  Localisation : Can set own language directory
+     *   V::langDir(__DIR__.'/validator_lang') // directory
+     *   V::lang('ru')
+     *
      * @link https://packagist.org/packages/vlucas/valitron
      * @param array $data
+     * @return bool
      */
     public function validate($data)
     {
+        Validator::langDir(WWW.'/valitron/lang');
+        Validator::lang('ru');
         $v = new Validator($data);
         $v->rules($this->rules);
 
@@ -80,13 +89,45 @@ abstract class Model
 
 
     /**
+     * Save data
+     *
+     * @return int|string
+     */
+    public function save()
+    {
+        if(!$this->table)
+        {
+            throw new Exception('Table name does not setted inside class [ ' . get_class($this) . ' ]');
+        }
+
+        $tbl = R::dispense($this->table);
+        foreach ($this->attributes as $name => $value)
+        {
+             $tbl->{$name} = $value;
+        }
+
+        return R::store($tbl);
+    }
+
+
+    /**
      * Get Errors
      *
      * @return array
      */
     public function getErrors()
     {
-        return $this->errors;
+        /* return $this->errors; */
+        $errors = '<ul>';
+        foreach ($this->errors as $error)
+        {
+            foreach ($error as $item)
+            {
+                $errors .= sprintf('<li>%s</li>', $item);
+            }
+        }
+        $errors .= '</ul>';
+        $_SESSION['error'] = $errors;
     }
 
 

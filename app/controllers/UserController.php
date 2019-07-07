@@ -18,6 +18,8 @@ class UserController extends AppController
      */
     public function signupAction()
     {
+        // echo password_hash('admin123', PASSWORD_DEFAULT);
+
         $data = $_POST;
         if(!empty($data))
         {
@@ -26,13 +28,35 @@ class UserController extends AppController
             // debug($user);
             // debug($data);
 
-            if($user->validate($data))
+            // if data not valide and item data already exist
+            if(!$user->validate($data) || !$user->checkUnique())
             {
-                die('OK');
-            }else{
-                die('NO');
+                // we'll display errors and redirect where he's from
+                $user->getErrors();
+
+                // storage form data in session
+                $_SESSION['form_data'] = $data;
+
+                // redirect user where is from
+                redirect();
             }
-            die;
+
+            // set password before saving or storage
+            $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
+
+
+            // If user saved
+            if($user->save())
+            {
+                // we'll write message success
+                $_SESSION['success'] = 'Вы успешно зарегистрированы!';
+
+            }else{
+
+                // we'll write error message
+                $_SESSION['error'] = 'Ошибка! Попробуйте позже';
+            }
+            redirect();
         }
         View::setMeta('Регистрация');
     }
@@ -45,7 +69,25 @@ class UserController extends AppController
      */
     public function loginAction()
     {
+        if(!empty($_POST))
+        {
+             $user = new User();
 
+             if($user->login())
+             {
+                 // we'll write message success
+                 $_SESSION['success'] = 'Вы успешно авторизован!';
+
+             }else{
+
+                 // we'll write error message
+                 $_SESSION['error'] = 'Логин/пароль введены неверно';
+             }
+
+             // redirect();
+            redirect('/');
+        }
+        View::setMeta('Вход');
     }
 
 
@@ -56,7 +98,11 @@ class UserController extends AppController
      */
     public function logoutAction()
     {
-
+        if(isset($_SESSION['user']))
+        {
+             unset($_SESSION['user']);
+             redirect('/user/login');
+        }
     }
 
 
