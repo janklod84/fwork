@@ -41,8 +41,17 @@ class MainController extends AppController
      */
     public function indexAction()
     {
-            # get count all posts
-            $total = R::count('posts');
+
+            # Get data active Language
+            // debug(App::$app->get('lang'));
+
+            # Get Code active Language
+            $lang = App::$app->get('lang')['code'];
+
+
+            # get count all posts where lang_code equal to active language
+            $total = R::count('posts', 'lang_code = ?', [$lang]); // echo $total
+
 
             # get page
             $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
@@ -57,7 +66,7 @@ class MainController extends AppController
 
 
             # get all posts from database
-            $posts = R::findAll('posts', "LIMIT $start, $perpage");
+            $posts = R::findAll('posts', "lang_code = ? LIMIT $start, $perpage", [$lang]);
 
 
             # set meta data

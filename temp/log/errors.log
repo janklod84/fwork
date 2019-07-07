@@ -154,3 +154,11 @@
 ==========================
 [2019-07-07 18:12:18] Error Message: Array to string conversion | File: D:\OSPanel\domains\work.loc\src\framework\Template\Lang.php, | Line: 33
 ==========================
+[2019-07-07 18:57:55] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 19:06:00] Error Message: Invalid argument supplied for foreach() | File: D:\OSPanel\domains\work.loc\src\libs\rb.php, | Line: 698
+==========================
+[2019-07-07 19:10:12] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 19:15:57] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
