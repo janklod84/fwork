@@ -101,8 +101,8 @@ class UserController extends AppController
         if(isset($_SESSION['user']))
         {
              unset($_SESSION['user']);
-             redirect('/user/login');
         }
+        redirect('/user/login');
     }
 
 

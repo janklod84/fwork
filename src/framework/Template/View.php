@@ -5,7 +5,13 @@ namespace Project\Template;
 use Exception;
 
 
-
+/**
+ * Class View
+ * TO Refactoring
+ *
+ *
+ * @package Project\Template
+ */
 class View
 {
     /**

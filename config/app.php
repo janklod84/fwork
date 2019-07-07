@@ -7,9 +7,13 @@
 $config = [
     'components' => [
         'cache' => 'Project\Library\Cache',
-        'test'  => 'Project\Library\Test'
     ],
-    // 'settings' => []
+    /*
+    'modules' => [
+        'test' => 'Project\Modules\Test'
+    ],
+    'settings' => []
+    */
 ];
 
 return $config;

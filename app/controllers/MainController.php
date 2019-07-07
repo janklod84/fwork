@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 
+use Project\Library\Pagination;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -10,8 +11,6 @@ use R;
 
 class MainController extends AppController
 {
-
-    // protected  $layout = 'main';
 
 
     /**
@@ -41,29 +40,24 @@ class MainController extends AppController
      */
     public function indexAction()
     {
-            // R::fancyDebug(true);
 
-            /*
-            # testing Monolog [ Library ]
-            $log = new Logger('name');
-            $log->pushHandler(new StreamHandler(ROOT.'/temp/monolog.log'), Logger::WARNING);
+            # get count all posts
+            $total = R::count('posts');
 
-            // add records to the log
-            $log->warning('Foo');
-            $log->error('Bar');
+            # get page
+            $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+
+            # get perpage
+            $perpage = 1; // 2;
 
 
-            # testing PHPMailer
-            $mailer = new PHPMailer();
-            debug($mailer);
-            */
+            # instancied pagination & get start page
+            $pagination = new Pagination($page, $perpage, $total);
+            $start = $pagination->getStart();
 
 
             # get all posts from database
-            $posts = R::findAll('posts');
-
-            # get one record post
-            $post = R::findOne('posts', 'id = 1');
+            $posts = R::findAll('posts', "LIMIT $start, $perpage");
 
             # get menu
             $menu = $this->menu;
@@ -74,7 +68,7 @@ class MainController extends AppController
 
 
             # set data
-            $this->set(compact('posts', 'menu'));
+            $this->set(compact('posts', 'menu', 'pagination', 'total'));
     }
 
 

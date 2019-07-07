@@ -37,6 +37,14 @@
         <div class="panel-body"><?= $post['text'] ?></div>
     </div>
   <?php endforeach; ?>
+
+  <!--  show pagination-->
+  <div class="text-center">
+      <p>Статей: <?= count($posts); ?> из <?= $total ?></p>
+      <?php if($pagination->countPages > 1): ?>
+         <?= $pagination ?>
+      <?php endif; ?>
+  </div>
 <?php endif; ?>
 <!-- end rendering posts -->
 
