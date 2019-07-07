@@ -34,3 +34,13 @@
 ==========================
 [2019-07-07 14:24:56] Error Message: Use of undefined constant posts - assumed 'posts' | File: D:\OSPanel\domains\work.loc\app\views\Main\index.php, | Line: 1
 ==========================
+[2019-07-07 14:53:59] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 15:16:55] Error Message: Class 'app\controllers\App' not found | File: D:\OSPanel\domains\work.loc\app\controllers\MainController.php, | Line: 44
+==========================
+[2019-07-07 15:44:37] Error Message: Class 'fw\core\App' not found | File: D:\OSPanel\domains\work.loc\app\controllers\AppController.php, | Line: 30
+==========================
+[2019-07-07 16:10:37] Error Message: Missing argument 1 for Project\Widgets\Language\Language::getLanguage(), called in D:\OSPanel\domains\work.loc\app\controllers\AppController.php on line 34 and defined | File: D:\OSPanel\domains\work.loc\src\framework\Widgets\Language\Language.php, | Line: 58
+==========================
+[2019-07-07 16:31:33] Error Message: Class 'Project\Widgets\Language\App' not found | File: D:\OSPanel\domains\work.loc\src\framework\Widgets\Language\Language.php, | Line: 36
+==========================

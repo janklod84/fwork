@@ -6,6 +6,7 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use PHPMailer\PHPMailer\PHPMailer;
 use Project\Template\View;
+use Project\App;
 use R;
 
 
@@ -40,7 +41,6 @@ class MainController extends AppController
      */
     public function indexAction()
     {
-
             # get count all posts
             $total = R::count('posts');
 

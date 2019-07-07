@@ -95,7 +95,7 @@
 <div class="footer">
     <div class="container">
 <!--   <p>Copyrights © 2015 Blog All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>-->
-        <p>Blog <a href="https://github.com/janklod84/">github-janklod84</a></p>
+        <p>Blog <a href="https://github.com/janklod84/" target="_blank">github-janklod84</a></p>
     </div>
 </div>
 

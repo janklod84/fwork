@@ -9,69 +9,49 @@ class Registry
     use Singleton;
 
     /**
-     * @var array $objects
+     * @var array $properties
      */
-    public static $objects = [];
+    public static $properties = [];
 
 
     /**
-     * Registry constructor.
+     * Set property
      *
-     * @retrun void
+     * @param $name
+     * @param $value
+     * @return void
      */
-    protected function __construct()
+    public function set($name, $value)
     {
-        $config = require_once (ROOT.'/config/app.php');
-
-        foreach($config['components'] as $name => $component)
-        {
-            self::$objects[$name] = new $component;
-        }
+        self::$properties[$name] = $value;
     }
 
 
     /**
-     * Get item from container
-     *
+     * Get property
      *
      * @param $name
      * @return mixed
      */
-    public function __get($name)
+    public function get($name)
     {
-        // echo $name;
-        if(is_object(self::$objects[$name]))
+        if(isset(self::$properties[$name]))
         {
-            return self::$objects[$name];
+            return self::$properties[$name];
         }
+        return null;
     }
 
 
     /**
-     * Set item
+     * Get properties
      *
      *
-     * @param strin $name
-     * @param string $classname
+     * @return array
      */
-    public function __set($name, $classname)
+    public function getProperties()
     {
-        if(!isset(self::$objects[$name]))
-        {
-            self::$objects[$name] = new $classname();
-        }
+        return self::$properties;
     }
 
-
-    /**
-     * Get List
-     *
-     * @return void
-     */
-    public function getList()
-    {
-        echo '<pre>';
-        print_r(self::$objects);
-        echo '</pre>';
-    }
 }

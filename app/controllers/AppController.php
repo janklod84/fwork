@@ -2,13 +2,14 @@
 namespace app\controllers;
 
 use app\models\BaseModel;
+use Project\App;
 use Project\Routing\Controller;
+use Project\Widgets\Language\Language;
 use R;
 
 class AppController extends Controller
 {
 
-    protected $menu;
     protected $meta;
 
 
@@ -26,8 +27,16 @@ class AppController extends Controller
         // Ici on instantie n'importe quel model afin d'avoir acces a la connection
         new BaseModel();
 
-        // get menu
-        $this->menu = R::findAll('category');
+        // Add all languages in container
+        App::$app->set('langs', Language::getLanguages());
+
+        // Add current language
+        $languages = App::$app->get('langs');
+        App::$app->set('lang', Language::getLanguage($languages));
+
+        // print properties
+        debug(App::$app->getProperties());
+
     }
 
 

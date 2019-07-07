@@ -1,4 +1,4 @@
-<!-- widgets select -->
+<!-- widget select -->
 <?php /*
  new \Project\Widgets\Menu\Menu([
     'tpl' => WWW.'/select/select.php',
@@ -8,7 +8,12 @@
     'cache' => 60, // 60s
     'cacheKey' => 'menu_select'
 ]);  */ ?>
-<!-- end widgets select -->
+<!-- end widget select -->
+
+<!-- show widget language -->
+<?php new \Project\Widgets\Language\Language(); ?>
+<br><br>
+<!-- end widget language -->
 
 <div class="recent">
     <h3>RECENT POSTS</h3>
