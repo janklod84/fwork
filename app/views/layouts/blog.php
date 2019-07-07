@@ -99,6 +99,7 @@
     </div>
 </div>
 
-
+<!-- Add scripts -->
+<script src="/blog/js/main.js"></script>
 </body>
 </html>

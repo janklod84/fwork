@@ -1,0 +1,10 @@
+app/langs/en/controller/action :
+
+# Tanslation all data in English inside page Main/index
+Ex: 'app/views/en/Main/index'
+
+
+# Here will be saved all data languages
+app/langs/en.php
+app/langs/ru.php
+
