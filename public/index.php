@@ -12,7 +12,7 @@ define('APP', ROOT .'/app');
 define('CORE', ROOT.'/src');
 define('CACHE', ROOT .'/temp/cache');
 define('LIBS', CORE.'/libs');
-define('LAYOUT', 'default');
+define('LAYOUT', 'blog');
 
 
 

@@ -1,2 +1,36 @@
 [2019-07-07 07:37:26] Error Message: Class 'Projec\Library\Pagination' not found | File: D:\OSPanel\domains\work.loc\app\controllers\MainController.php, | Line: 57
 ==========================
+[2019-07-07 13:30:37] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:50] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:50] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:51] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:51] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:51] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:51] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:51] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:51] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:51] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:51] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:51] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:32:51] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:41:54] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:42:46] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 13:42:46] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
+[2019-07-07 14:24:56] Error Message: Use of undefined constant posts - assumed 'posts' | File: D:\OSPanel\domains\work.loc\app\views\Main\index.php, | Line: 1
+==========================

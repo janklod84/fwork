@@ -243,4 +243,21 @@ class View
        self::$meta['desc']  = $desc;
        self::$meta['keywords'] = $keywords;
     }
+
+
+    /**
+     * Include partials or others views files
+     *
+     * @param $file
+     * @return void
+     */
+    public function inclure($file)
+    {
+        $file = sprintf(APP.'/views/%s.php', $file);
+        if(is_file($file)){
+            require_once $file;
+        }else{
+            echo sprintf('File %s not found ...', $file);
+        }
+    }
 }

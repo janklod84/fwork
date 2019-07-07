@@ -48,7 +48,7 @@ class MainController extends AppController
             $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 
             # get perpage
-            $perpage = 1; // 2;
+            $perpage = 2;
 
 
             # instancied pagination & get start page
@@ -59,16 +59,13 @@ class MainController extends AppController
             # get all posts from database
             $posts = R::findAll('posts', "LIMIT $start, $perpage");
 
-            # get menu
-            $menu = $this->menu;
-
 
             # set meta data
-            View::setMeta('Главная страница', 'Описание страницы', 'Ключивые слова');
+            View::setMeta('Blog :: Главная страница', 'Описание страницы', 'Ключивые слова');
 
 
             # set data
-            $this->set(compact('posts', 'menu', 'pagination', 'total'));
+            $this->set(compact('posts', 'pagination', 'total'));
     }
 
 
