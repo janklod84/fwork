@@ -3,6 +3,7 @@ namespace Project\Template;
 
 
 use Exception;
+use Project\App;
 
 
 /**
@@ -103,6 +104,11 @@ class View
      */
     public function render(array $data = [])
     {
+         // Load current params language
+         $language = App::$app->get('lang'); // debug($language);
+         Lang::load($language, $this->route);
+
+         // extract parsed data
          extract($data);
 
          // get full path view

@@ -138,3 +138,19 @@
 ==========================
 [2019-07-07 17:15:50] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
 ==========================
+[2019-07-07 18:06:06] Error Message: Class 'Project\Template\App' not found | File: D:\OSPanel\domains\work.loc\src\framework\Template\View.php, | Line: 107
+==========================
+[2019-07-07 18:07:23] Error Message: Class 'Project\Template\App' not found | File: D:\OSPanel\domains\work.loc\src\framework\Template\View.php, | Line: 107
+==========================
+[2019-07-07 18:07:40] Error Message: Array to string conversion | File: D:\OSPanel\domains\work.loc\src\framework\Template\Lang.php, | Line: 33
+==========================
+[2019-07-07 18:09:11] Error Message: Array to string conversion | File: D:\OSPanel\domains\work.loc\src\framework\Template\Lang.php, | Line: 33
+==========================
+[2019-07-07 18:09:12] Error Message: Array to string conversion | File: D:\OSPanel\domains\work.loc\src\framework\Template\Lang.php, | Line: 33
+==========================
+[2019-07-07 18:10:43] Error Message: Array to string conversion | File: D:\OSPanel\domains\work.loc\src\framework\Template\Lang.php, | Line: 33
+==========================
+[2019-07-07 18:12:04] Error Message: Array to string conversion | File: D:\OSPanel\domains\work.loc\src\framework\Template\View.php, | Line: 108
+==========================
+[2019-07-07 18:12:18] Error Message: Array to string conversion | File: D:\OSPanel\domains\work.loc\src\framework\Template\Lang.php, | Line: 33
+==========================

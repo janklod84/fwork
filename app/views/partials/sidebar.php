@@ -10,13 +10,30 @@
 ]);  */ ?>
 <!-- end widget select -->
 
+<?php
+/*
+ debug(\Project\Template\Lang::$lang_data);
+selected language : 'ru'
+ Array
+(
+    [recent_posts] => Последные записи
+    [categories] => Категории
+    [test1] => Тестовое значение 1
+    [test2] => Тестовое значение 2
+    [read_more] => Читать далее
+)
+*/
+?>
+
 <!-- show widget language -->
 <?php new \Project\Widgets\Language\Language(); ?>
 <br><br>
 <!-- end widget language -->
 
 <div class="recent">
-    <h3>RECENT POSTS</h3>
+    <!-- <h3>RECENT POSTS</h3> -->
+    <!--<h3><? // = \Project\Template\Lang::get('recent_posts') ?></h3> -->
+    <h3><?php __t('recent_posts') ?></h3>
     <ul>
         <li><a href="#">Aliquam tincidunt mauris</a></li>
         <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>

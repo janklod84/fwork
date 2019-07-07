@@ -1,6 +1,10 @@
 <?php
 
 // Pretty Print Array data
+/**
+ * @param $arr
+ * @param bool $die
+ */
 function debug($arr, $die = false)
 {
     echo '<pre>';
@@ -26,7 +30,23 @@ function redirect($http = false)
 
 
 // Escapce bad str
+/**
+ * @param $str
+ * @return string
+ */
 function h($str)
 {
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+}
+
+
+// Translater
+/**
+ * @param $key
+ * @param $default
+ * @return string
+ */
+function __t($key, $default='') // or named function __($key, $default='') {}
+{
+    echo Project\Template\Lang::get($key);
 }
