@@ -48,3 +48,5 @@
 ==========================
 [2019-07-07 05:01:05] Error Message: <p>Not Found view <b>D:\OSPanel\domains\work.loc\app\views\User\logout.php</b></p> | File: D:\OSPanel\domains\work.loc\src\framework\Template\View.php, | Line: 85
 ==========================
+[2019-07-07 05:02:27] Error Message: Страница не найдена! | File: D:\OSPanel\domains\work.loc\src\framework\Routing\Router.php, | Line: 152
+==========================
