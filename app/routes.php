@@ -23,7 +23,7 @@ Router::add('page/(?P<alias>[a-z-]+)', [
 // Defaults Rules or Routes [ Later replace by method Route::add(pattern, route)->with('str', 'regexcode') ]
 # Ex: http://work.loc/admin
 Router::add('admin', [
-    'controller' => 'User',
+    'controller' => 'Main',
     'action' => 'index',
     'prefix' => 'admin'
 ]);

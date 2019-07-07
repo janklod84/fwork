@@ -41,7 +41,6 @@ class MainController extends AppController
      */
     public function indexAction()
     {
-
             # Get data active Language
             // debug(App::$app->get('lang'));
 

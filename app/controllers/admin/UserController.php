@@ -26,13 +26,34 @@ class UserController extends AppController
     }
 
     /**
-     * Action test
+     * Action Login
+     *
+     * die(password_hash('admin123', PASSWORD_DEFAULT));
      *
      * @return void
      */
-    public function testAction()
+    public function loginAction()
     {
-        echo __METHOD__;
+
+        if(!empty($_POST))
+        {
+            $user = new User();
+
+            // if not find admin
+            if(!$user->login(true))
+            {
+                $_SESSION['error'] = 'Логин/Пароль введены неверно!';
+            }
+
+            // verify admin
+            if(User::isAdmin())
+            {
+                 redirect(ADMIN);
+            }else{
+                 redirect();
+            }
+        }
+        $this->layout = 'login';
     }
 
 }

@@ -13,7 +13,7 @@ define('CORE', ROOT.'/src');
 define('CACHE', ROOT .'/temp/cache');
 define('LIBS', CORE.'/libs');
 define('LAYOUT', 'blog');
-
+define('ADMIN', 'http://work.loc/admin');
 
 
 // Bootstrap

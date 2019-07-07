@@ -2,6 +2,7 @@
 namespace app\controllers\admin;
 
 use app\models\BaseModel;
+use app\models\User;
 use Project\Routing\Controller;
 use R;
 
@@ -16,18 +17,24 @@ class AppController extends Controller
      * AppController constructor.
      *
      * @param array $route
+     * @return void
      */
     public function __construct($route)
     {
         parent::__construct($route);
 
-        /*
-        if(!isset($is_admin) || $is_admin !== 1)
+        // get connection from model
+        new \app\models\BaseModel();
+
+
+        /* debug($route, true); */
+
+        // Condition very important : $route['action'] != 'login' , permit no-conflict recycling redirect
+        // if user is not admin , we'll redirect user
+        if(!User::isAdmin() && $route['action'] != 'login')
         {
-             // or do redirect to /admin/login
-             die('Access Restricted!');
+            redirect(ADMIN. '/user/login');
         }
-        */
     }
 
 }

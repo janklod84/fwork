@@ -75,15 +75,24 @@ class User extends Model
 
     /**
      * Login
+     *
+     * @param string $isAdmin
+     * @return bool
      */
-    public function login()
+    public function login($isAdmin = false)
     {
        $login = !empty(trim($_POST['login'])) ? trim($_POST['login']) : null;
        $password = !empty(trim($_POST['password'])) ? trim($_POST['password']) : null;
 
        if($login && $password)
        {
-           $user = \R::findOne($this->table, 'login = ? LIMIT 1', [$login]);
+           // if is admin
+           if($isAdmin) // $isAdmin === true
+           {
+               $user = \R::findOne($this->table, "login = ? AND role = 'admin' LIMIT 1", [$login]);
+           }else{
+               $user = \R::findOne($this->table, 'login = ? LIMIT 1', [$login]);
+           }
            if($user)
            {
                 if(password_verify($password, $user->password))
@@ -105,5 +114,14 @@ class User extends Model
            }
        }
        return false;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public static function isAdmin()
+    {
+        return (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin');
     }
 }
