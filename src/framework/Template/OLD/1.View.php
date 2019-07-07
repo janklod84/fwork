@@ -25,8 +25,6 @@ class View
         'keywords' => ''
     ];
 
-    public $compress = false;
-
 
     /**
      * View constructor.
@@ -56,10 +54,7 @@ class View
 
     /**
      * Compress page
-     * See in your browser compress page for optimisation [ Kilobytes ]
      *
-     *
-     * Ex: preg_replace(#(\n)+#, "\n", '<!DOCTYPE html><html><head></head><body><h1>lorem ipsum ...</h1></body>')
      *
      * @param $buffer
      * @return string|string[]|null
@@ -89,9 +84,6 @@ class View
     /**
      * Render view
      *
-     * ob_start('ob_gzhandler') [ compress more KB ]
-     *
-     * header("Content-Encoding: gzip");
      * @param array $data
      * @throws Exception
      */
@@ -109,34 +101,21 @@ class View
          $file_view = $this->normalisePath($file_view);
 
          // start Bufferisation
-         // ob_start();
+         ob_start();
 
-        $compress = $this->compress === true ? [$this, 'compressPage'] : null;
-        ob_start($compress); // if used : ob_start('ob_gzhandler') [ compress more KB ]
-        {
+         // verify if view file exist
+         if(is_file($file_view))
+         {
+             // include view file
+             require($file_view);
 
-            // set header if used ob_start('ob_gzhandler')
-            // header("Content-Encoding: gzip");
+         }else{
+             // echo sprintf('<p>Not Found view <b>%s</b></p>', $file_view);
+              throw new Exception(sprintf('<p>Not Found view <b>%s</b></p>', $file_view), 404);
+         }
 
-
-            // verify if view file exist
-            if (is_file($file_view)) {
-                // include view file
-                require($file_view);
-
-            } else {
-                // echo sprintf('<p>Not Found view <b>%s</b></p>', $file_view);
-                throw new Exception(sprintf('<p>Not Found view <b>%s</b></p>', $file_view), 404);
-            }
-
-            // storage content
-            // $content = ob_get_clean(); # echo $content;  IDEA (new Response())->setBody($content)) #
-
-            $content = ob_get_contents();
-        }
-
-        ob_clean();
-
+         // storage content
+         $content = ob_get_clean(); # echo $content;  IDEA (new Response())->setBody($content)) #
 
 
          if($this->layout !== false)
